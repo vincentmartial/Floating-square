@@ -1,0 +1,542 @@
+#N canvas 100 23 280 579 10;
+#N canvas 692 213 553 296 mics 0;
+#X obj 98 147 *~ 0;
+#X obj 111 112 vsl 15 30 0 1 0 0 mic1eq rmic1eq eq 2 -9 0 10 -21269
+-113280 -1 0 1;
+#X obj 129 147 *~ 0;
+#X obj 142 112 vsl 15 30 0 1 0 0 mic1dir rmic1dir dir 1 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 191 147 *~ 0;
+#X obj 197 113 vsl 15 30 0 1 0 0 mic1sub rmic1sub sub 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 191 233 throw~ sub;
+#X obj 224 147 *~ 0;
+#X obj 243 112 vsl 15 30 0 1 0 0 mic2eq rmic2eq eq 2 -9 0 10 -21269
+-113280 -1 0 1;
+#X obj 254 146 *~ 0;
+#X obj 271 113 vsl 15 30 0 1 0 0 mic2dir rmic2dir dir 1 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 288 147 *~ 0;
+#X obj 298 113 vsl 15 30 0 1 0 0 mic2sub rmic2sub sub 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 366 129 adc~ 12;
+#X obj 319 147 *~ 0;
+#X obj 324 113 vsl 15 30 0 1 0 0 mic2filtre rmic2filtre fil 0 -9 0
+10 -105134 -262130 -1 0 1;
+#X obj 24 130 adc~ 11;
+#X obj 98 213 s~ eq1;
+#X obj 129 253 throw~ mix1;
+#X obj 169 113 vsl 15 30 0 1 0 0 mic1filtre rmic1filtre fil 0 -9 0
+10 -105134 -257985 -1 0 1;
+#X obj 160 148 *~ 0;
+#X msg 226 42 1;
+#X floatatom 226 119 1 0 0 0 - - -;
+#X obj 225 22 loadbang;
+#X obj 319 235 s~ cpol1;
+#X connect 0 0 17 0;
+#X connect 1 0 0 1;
+#X connect 2 0 18 0;
+#X connect 3 0 2 1;
+#X connect 4 0 6 0;
+#X connect 5 0 4 1;
+#X connect 7 0 17 0;
+#X connect 8 0 7 1;
+#X connect 9 0 18 0;
+#X connect 10 0 9 1;
+#X connect 11 0 6 0;
+#X connect 12 0 11 1;
+#X connect 13 0 7 0;
+#X connect 13 0 9 0;
+#X connect 13 0 11 0;
+#X connect 13 0 14 0;
+#X connect 14 0 24 0;
+#X connect 15 0 14 1;
+#X connect 16 0 0 0;
+#X connect 16 0 2 0;
+#X connect 16 0 4 0;
+#X connect 19 0 20 0;
+#X connect 20 0 24 0;
+#X connect 21 0 22 0;
+#X connect 23 0 21 0;
+#X coords 0 -1 1 1 250 47 2 100 100;
+#X restore 8 -181 pd mics;
+#N canvas 330 226 534 312 mics 0;
+#X obj 98 147 *~ 0;
+#X obj 111 113 vsl 15 30 0 1 0 0 mic3eq rmic3eq eq 2 -9 0 10 -21269
+-113280 -1 0 1;
+#X obj 129 147 *~ 0;
+#X obj 142 113 vsl 15 30 0 1 0 0 mic3dir rmic3dir dir 1 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 191 147 *~ 0;
+#X obj 199 114 vsl 15 30 0 1 0 0 mic3sub rmic3sub sub 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 191 233 throw~ sub;
+#X obj 221 147 *~ 0;
+#X obj 244 113 vsl 15 30 0 1 0 0 mic4eq rmic4eq eq 2 -9 0 10 -21269
+-113280 -1 0 1;
+#X obj 252 148 *~ 0;
+#X obj 269 113 vsl 15 30 0 1 0 0 mic4dir rmic4dir dir 1 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 285 147 *~ 0;
+#X obj 296 113 vsl 15 30 0 1 0 0 mic4sub rmic4sub sub 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 316 147 *~ 0;
+#X obj 322 114 vsl 15 30 0 1 0 0 mic4filtre rmic4filtre fil 0 -9 0
+10 -105134 -262130 -1 0 1;
+#X obj 98 213 s~ eq2;
+#X obj 129 253 throw~ mix2;
+#X obj 24 130 adc~ 13;
+#X obj 353 130 adc~ 14;
+#X obj 172 114 vsl 15 30 0 1 0 0 mic3filtre rmic3filtre fil 0 -9 0
+10 -105134 -257985 -1 0 1;
+#X obj 316 203 s~ cpol2;
+#X obj 159 148 *~ 0;
+#X floatatom 228 117 1 0 0 0 - - -;
+#X obj 227 20 loadbang;
+#X msg 228 40 2;
+#X connect 0 0 15 0;
+#X connect 1 0 0 1;
+#X connect 2 0 16 0;
+#X connect 3 0 2 1;
+#X connect 4 0 6 0;
+#X connect 5 0 4 1;
+#X connect 7 0 15 0;
+#X connect 8 0 7 1;
+#X connect 9 0 16 0;
+#X connect 10 0 9 1;
+#X connect 11 0 6 0;
+#X connect 12 0 11 1;
+#X connect 13 0 20 0;
+#X connect 14 0 13 1;
+#X connect 17 0 0 0;
+#X connect 17 0 2 0;
+#X connect 17 0 4 0;
+#X connect 18 0 7 0;
+#X connect 18 0 9 0;
+#X connect 18 0 11 0;
+#X connect 18 0 13 0;
+#X connect 19 0 21 0;
+#X connect 21 0 20 0;
+#X connect 23 0 24 0;
+#X connect 24 0 22 0;
+#X coords 0 -1 1 1 250 47 2 100 100;
+#X restore 8 -117 pd mics;
+#N canvas 333 44 518 276 mics 0;
+#X obj 98 147 *~ 0;
+#X obj 111 113 vsl 15 30 0 1 0 0 mic5eq rmic5eq eq 2 -9 0 10 -21269
+-113280 -1 0 1;
+#X obj 129 147 *~ 0;
+#X obj 141 113 vsl 15 30 0 1 0 0 mic5dir rmic5dir dir 1 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 181 148 *~ 0;
+#X obj 198 113 vsl 15 30 0 1 0 0 mic5sub rmic5sub sub 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 181 233 throw~ sub;
+#X obj 219 147 *~ 0;
+#X obj 241 112 vsl 15 30 0 1 0 0 mic6eq rmic6eq eq 2 -9 0 10 -21269
+-113280 -1 0 1;
+#X obj 249 146 *~ 0;
+#X obj 269 112 vsl 15 30 0 1 0 0 mic6dir rmic6dir dir 1 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 280 147 *~ 0;
+#X obj 298 112 vsl 15 30 0 1 0 0 mic6sub rmic6sub sub 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 311 147 *~ 0;
+#X obj 325 113 vsl 15 30 0 1 0 0 mic6filtre rmic6filtre fil 0 -9 0
+10 -105134 -262130 -1 0 1;
+#X obj 98 213 s~ eq3;
+#X obj 129 253 throw~ mix3;
+#X obj 24 130 adc~ 15;
+#X obj 170 113 vsl 15 30 0 1 0 0 mic5filtre rmic5filtre fil 0 -9 0
+10 -105134 -257985 -1 0 1;
+#X obj 154 149 *~ 0;
+#X obj 315 206 s~ cpol3;
+#X floatatom 225 120 1 0 0 0 - - -;
+#X obj 224 23 loadbang;
+#X msg 225 43 3;
+#X connect 0 0 15 0;
+#X connect 1 0 0 1;
+#X connect 2 0 16 0;
+#X connect 3 0 2 1;
+#X connect 4 0 6 0;
+#X connect 5 0 4 1;
+#X connect 7 0 15 0;
+#X connect 8 0 7 1;
+#X connect 9 0 16 0;
+#X connect 10 0 9 1;
+#X connect 11 0 6 0;
+#X connect 12 0 11 1;
+#X connect 13 0 20 0;
+#X connect 14 0 13 1;
+#X connect 17 0 0 0;
+#X connect 17 0 2 0;
+#X connect 17 0 4 0;
+#X connect 18 0 19 0;
+#X connect 19 0 20 0;
+#X connect 22 0 23 0;
+#X connect 23 0 21 0;
+#X coords 0 -1 1 1 250 47 2 100 100;
+#X restore 7 -52 pd mics;
+#N canvas 326 264 518 276 mics 0;
+#X obj 98 147 *~ 0;
+#X obj 111 113 vsl 15 30 0 1 0 0 mic7eq rmic7eq eq 2 -9 0 10 -21269
+-113280 -1 0 1;
+#X obj 129 147 *~ 0;
+#X obj 142 113 vsl 15 30 0 1 0 0 mic7dir rmic7dir dir 1 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 181 147 *~ 0;
+#X obj 202 112 vsl 15 30 0 1 0 0 mic7sub rmic7sub sub 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 181 233 throw~ sub;
+#X obj 212 147 *~ 0;
+#X obj 245 112 vsl 15 30 0 1 0 0 mic8eq rmic8eq eq 2 -9 0 10 -21269
+-113280 -1 0 1;
+#X obj 242 146 *~ 0;
+#X obj 272 112 vsl 15 30 0 1 0 0 mic8dir rmic8dir dir 1 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 276 147 *~ 0;
+#X obj 299 112 vsl 15 30 0 1 0 0 mic8sub rmic8sub sub 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 307 147 *~ 0;
+#X obj 326 113 vsl 15 30 0 1 0 0 mic8filtre rmic8filtre fil 0 -9 0
+10 -105134 -262130 -1 0 1;
+#X obj 307 235 throw~ cpol;
+#X obj 129 253 throw~ mix4;
+#X obj 98 213 s~ eq4;
+#X obj 24 130 adc~ 17;
+#X obj 353 130 adc~ 18;
+#X obj 170 113 vsl 15 30 0 1 0 0 mic7filtre rmic7filtre fil 0 -9 0
+10 -105134 -257985 -1 0 1;
+#X obj 157 145 *~ 0;
+#X obj 308 203 s~ cpol4;
+#X floatatom 229 118 1 0 0 0 - - -;
+#X obj 228 21 loadbang;
+#X msg 229 41 4;
+#X connect 0 0 17 0;
+#X connect 1 0 0 1;
+#X connect 2 0 16 0;
+#X connect 3 0 2 1;
+#X connect 4 0 6 0;
+#X connect 5 0 4 1;
+#X connect 7 0 17 0;
+#X connect 8 0 7 1;
+#X connect 9 0 16 0;
+#X connect 10 0 9 1;
+#X connect 11 0 6 0;
+#X connect 12 0 11 1;
+#X connect 13 0 15 0;
+#X connect 13 0 22 0;
+#X connect 14 0 13 1;
+#X connect 18 0 0 0;
+#X connect 18 0 2 0;
+#X connect 18 0 4 0;
+#X connect 19 0 7 0;
+#X connect 19 0 9 0;
+#X connect 19 0 11 0;
+#X connect 19 0 13 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 24 0 25 0;
+#X connect 25 0 23 0;
+#X coords 0 -1 1 1 250 47 2 100 100;
+#X restore 7 15 pd mics;
+#N canvas 612 207 553 296 mics 0;
+#X obj 98 147 *~ 0;
+#X obj 111 112 vsl 15 30 0 1 0 0 mic9eq rmic9eq eq 2 -9 0 10 -21269
+-113280 -1 0 1;
+#X obj 129 147 *~ 0;
+#X obj 142 112 vsl 15 30 0 1 0 0 mic9dir rmic9dir dir 1 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 191 147 *~ 0;
+#X obj 197 113 vsl 15 30 0 1 0 0 mic9sub rmic9sub sub 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 191 233 throw~ sub;
+#X obj 224 147 *~ 0;
+#X obj 243 112 vsl 15 30 0 1 0 0 mic10eq rmic10eq eq 2 -9 0 10 -21269
+-113280 -1 0 1;
+#X obj 254 146 *~ 0;
+#X obj 271 113 vsl 15 30 0 1 0 0 mic10dir rmic10dir dir 1 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 288 147 *~ 0;
+#X obj 298 113 vsl 15 30 0 1 0 0 mic10sub rmic10sub sub 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 366 129 adc~ 12;
+#X obj 319 147 *~ 0;
+#X obj 324 113 vsl 15 30 0 1 0 0 mic10filtre rmic10filtre fil 0 -9
+0 10 -105134 -262130 -1 0 1;
+#X obj 24 130 adc~ 11;
+#X obj 169 113 vsl 15 30 0 1 0 0 mic9filtre rmic9filtre fil 0 -9 0
+10 -105134 -257985 -1 0 1;
+#X obj 160 148 *~ 0;
+#X obj 129 253 throw~ mix5;
+#X obj 98 213 s~ eq5;
+#X obj 319 235 s~ cpol5;
+#X floatatom 225 118 1 0 0 0 - - -;
+#X obj 224 21 loadbang;
+#X msg 225 41 5;
+#X connect 0 0 20 0;
+#X connect 1 0 0 1;
+#X connect 2 0 19 0;
+#X connect 3 0 2 1;
+#X connect 4 0 6 0;
+#X connect 5 0 4 1;
+#X connect 7 0 20 0;
+#X connect 8 0 7 1;
+#X connect 9 0 19 0;
+#X connect 10 0 9 1;
+#X connect 11 0 6 0;
+#X connect 12 0 11 1;
+#X connect 13 0 7 0;
+#X connect 13 0 9 0;
+#X connect 13 0 11 0;
+#X connect 13 0 14 0;
+#X connect 14 0 21 0;
+#X connect 15 0 14 1;
+#X connect 16 0 0 0;
+#X connect 16 0 2 0;
+#X connect 16 0 4 0;
+#X connect 17 0 18 0;
+#X connect 18 0 21 0;
+#X connect 23 0 24 0;
+#X connect 24 0 22 0;
+#X coords 0 -1 1 1 250 47 2 100 100;
+#X restore 8 75 pd mics;
+#N canvas 330 226 534 312 mics 0;
+#X obj 98 147 *~ 0;
+#X obj 111 113 vsl 15 30 0 1 0 0 mic11eq rmic11eq eq 2 -9 0 10 -21269
+-113280 -1 0 1;
+#X obj 129 147 *~ 0;
+#X obj 142 113 vsl 15 30 0 1 0 0 mic11dir rmic11dir dir 1 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 191 147 *~ 0;
+#X obj 199 114 vsl 15 30 0 1 0 0 mic11sub rmic11sub sub 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 191 233 throw~ sub;
+#X obj 221 147 *~ 0;
+#X obj 244 113 vsl 15 30 0 1 0 0 mic12eq rmic12eq eq 2 -9 0 10 -21269
+-113280 -1 0 1;
+#X obj 252 148 *~ 0;
+#X obj 269 113 vsl 15 30 0 1 0 0 mic12dir rmic12dir dir 1 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 285 147 *~ 0;
+#X obj 296 113 vsl 15 30 0 1 0 0 mic12sub rmic12sub sub 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 316 147 *~ 0;
+#X obj 322 114 vsl 15 30 0 1 0 0 mic12filtre rmic12filtre fil 0 -9
+0 10 -105134 -262130 -1 0 1;
+#X obj 24 130 adc~ 13;
+#X obj 353 130 adc~ 14;
+#X obj 172 114 vsl 15 30 0 1 0 0 mic11filtre rmic11filtre fil 0 -9
+0 10 -105134 -257985 -1 0 1;
+#X obj 159 148 *~ 0;
+#X obj 98 213 s~ eq6;
+#X obj 129 253 throw~ mix6;
+#X obj 316 203 s~ cpol6;
+#X floatatom 226 118 1 0 0 0 - - -;
+#X obj 225 21 loadbang;
+#X msg 226 41 6;
+#X connect 0 0 19 0;
+#X connect 1 0 0 1;
+#X connect 2 0 20 0;
+#X connect 3 0 2 1;
+#X connect 4 0 6 0;
+#X connect 5 0 4 1;
+#X connect 7 0 19 0;
+#X connect 8 0 7 1;
+#X connect 9 0 20 0;
+#X connect 10 0 9 1;
+#X connect 11 0 6 0;
+#X connect 12 0 11 1;
+#X connect 13 0 21 0;
+#X connect 14 0 13 1;
+#X connect 15 0 0 0;
+#X connect 15 0 2 0;
+#X connect 15 0 4 0;
+#X connect 16 0 7 0;
+#X connect 16 0 9 0;
+#X connect 16 0 11 0;
+#X connect 16 0 13 0;
+#X connect 17 0 18 0;
+#X connect 18 0 21 0;
+#X connect 23 0 24 0;
+#X connect 24 0 22 0;
+#X coords 0 -1 1 1 250 47 2 100 100;
+#X restore 8 139 pd mics;
+#N canvas 333 44 518 276 mics 0;
+#X obj 98 147 *~ 0;
+#X obj 111 113 vsl 15 30 0 1 0 0 mic13eq rmic13eq eq 2 -9 0 10 -21269
+-113280 -1 0 1;
+#X obj 129 147 *~ 0;
+#X obj 141 113 vsl 15 30 0 1 0 0 mic13dir rmic13dir dir 1 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 181 148 *~ 0;
+#X obj 198 113 vsl 15 30 0 1 0 0 mic13sub rmic13sub sub 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 181 233 throw~ sub;
+#X obj 219 147 *~ 0;
+#X obj 241 112 vsl 15 30 0 1 0 0 mic14eq rmic14eq eq 2 -9 0 10 -21269
+-113280 -1 0 1;
+#X obj 249 146 *~ 0;
+#X obj 269 112 vsl 15 30 0 1 0 0 mic14dir rmic14dir dir 1 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 280 147 *~ 0;
+#X obj 298 112 vsl 15 30 0 1 0 0 mic14sub rmic14sub sub 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 311 147 *~ 0;
+#X obj 325 113 vsl 15 30 0 1 0 0 mic14filtre rmic14filtre fil 0 -9
+0 10 -105134 -262130 -1 0 1;
+#X obj 24 130 adc~ 15;
+#X obj 170 113 vsl 15 30 0 1 0 0 mic13filtre rmic13filtre fil 0 -9
+0 10 -105134 -257985 -1 0 1;
+#X obj 154 149 *~ 0;
+#X obj 98 213 s~ eq7;
+#X obj 129 253 throw~ mix7;
+#X obj 315 206 s~ cpol7;
+#X floatatom 223 118 1 0 0 0 - - -;
+#X obj 222 21 loadbang;
+#X msg 223 41 7;
+#X connect 0 0 18 0;
+#X connect 1 0 0 1;
+#X connect 2 0 19 0;
+#X connect 3 0 2 1;
+#X connect 4 0 6 0;
+#X connect 5 0 4 1;
+#X connect 7 0 18 0;
+#X connect 8 0 7 1;
+#X connect 9 0 19 0;
+#X connect 10 0 9 1;
+#X connect 11 0 6 0;
+#X connect 12 0 11 1;
+#X connect 13 0 20 0;
+#X connect 14 0 13 1;
+#X connect 15 0 0 0;
+#X connect 15 0 2 0;
+#X connect 15 0 4 0;
+#X connect 16 0 17 0;
+#X connect 17 0 20 0;
+#X connect 22 0 23 0;
+#X connect 23 0 21 0;
+#X coords 0 -1 1 1 250 47 2 100 100;
+#X restore 7 204 pd mics;
+#N canvas 326 264 518 276 mics 0;
+#X obj 98 147 *~ 0;
+#X obj 111 113 vsl 15 30 0 1 0 0 mic15eq rmic15eq eq 2 -9 0 10 -21269
+-113280 -1 0 1;
+#X obj 129 147 *~ 0;
+#X obj 142 113 vsl 15 30 0 1 0 0 mic15dir rmic15dir dir 1 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 181 147 *~ 0;
+#X obj 202 112 vsl 15 30 0 1 0 0 mic15sub rmic15sub sub 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 181 233 throw~ sub;
+#X obj 212 147 *~ 0;
+#X obj 245 112 vsl 15 30 0 1 0 0 mic16eq rmic16eq eq 2 -9 0 10 -21269
+-113280 -1 0 1;
+#X obj 242 146 *~ 0;
+#X obj 272 112 vsl 15 30 0 1 0 0 mic16dir rmic16dir dir 1 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 276 147 *~ 0;
+#X obj 299 112 vsl 15 30 0 1 0 0 mic16sub rmic16sub sub 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 307 147 *~ 0;
+#X obj 326 113 vsl 15 30 0 1 0 0 mic16filtre rmic16filtre fil 0 -9
+0 10 -105134 -262130 -1 0 1;
+#X obj 24 130 adc~ 17;
+#X obj 353 130 adc~ 18;
+#X obj 170 113 vsl 15 30 0 1 0 0 mic15filtre rmic15filtre fil 0 -9
+0 10 -105134 -257985 -1 0 1;
+#X obj 157 145 *~ 0;
+#X obj 98 213 s~ eq8;
+#X obj 129 253 throw~ mix8;
+#X obj 308 203 s~ cpol8;
+#X floatatom 227 119 1 0 0 0 - - -;
+#X obj 226 22 loadbang;
+#X msg 227 42 8;
+#X connect 0 0 19 0;
+#X connect 1 0 0 1;
+#X connect 2 0 20 0;
+#X connect 3 0 2 1;
+#X connect 4 0 6 0;
+#X connect 5 0 4 1;
+#X connect 7 0 19 0;
+#X connect 8 0 7 1;
+#X connect 9 0 20 0;
+#X connect 10 0 9 1;
+#X connect 11 0 6 0;
+#X connect 12 0 11 1;
+#X connect 13 0 21 0;
+#X connect 14 0 13 1;
+#X connect 15 0 0 0;
+#X connect 15 0 2 0;
+#X connect 15 0 4 0;
+#X connect 16 0 7 0;
+#X connect 16 0 9 0;
+#X connect 16 0 11 0;
+#X connect 16 0 13 0;
+#X connect 17 0 18 0;
+#X connect 18 0 21 0;
+#X connect 23 0 24 0;
+#X connect 24 0 22 0;
+#X coords 0 -1 1 1 250 47 2 100 100;
+#X restore 7 271 pd mics;
+#N canvas 326 264 518 276 mics 0;
+#X obj 98 147 *~ 0;
+#X obj 111 113 vsl 15 30 0 1 0 0 mic17eq rmic17eq eq 2 -9 0 10 -21269
+-113280 -1 0 1;
+#X obj 129 147 *~ 0;
+#X obj 142 113 vsl 15 30 0 1 0 0 mic17dir rmic17dir dir 1 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 181 147 *~ 0;
+#X obj 202 112 vsl 15 30 0 1 0 0 mic17sub rmic17sub sub 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 181 233 throw~ sub;
+#X obj 212 147 *~ 0;
+#X obj 245 112 vsl 15 30 0 1 0 0 mic18eq rmic18eq eq 2 -9 0 10 -21269
+-113280 -1 0 1;
+#X obj 242 146 *~ 0;
+#X obj 272 112 vsl 15 30 0 1 0 0 mic18dir rmic18dir dir 1 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 276 147 *~ 0;
+#X obj 299 112 vsl 15 30 0 1 0 0 mic18sub rmic18sub sub 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 307 147 *~ 0;
+#X obj 326 113 vsl 15 30 0 1 0 0 mic18filtre rmic18filtre fil 0 -9
+0 10 -105134 -262130 -1 0 1;
+#X obj 24 130 adc~ 17;
+#X obj 353 130 adc~ 18;
+#X obj 170 113 vsl 15 30 0 1 0 0 mic17filtre rmic17filtre fil 0 -9
+0 10 -105134 -257985 -1 0 1;
+#X obj 157 145 *~ 0;
+#X obj 98 213 s~ eq9;
+#X obj 129 253 throw~ mix9;
+#X obj 308 203 s~ cpol9;
+#X floatatom 227 118 1 0 0 0 - - -;
+#X obj 226 21 loadbang;
+#X msg 227 40 9;
+#X connect 0 0 19 0;
+#X connect 1 0 0 1;
+#X connect 2 0 20 0;
+#X connect 3 0 2 1;
+#X connect 4 0 6 0;
+#X connect 5 0 4 1;
+#X connect 7 0 19 0;
+#X connect 8 0 7 1;
+#X connect 9 0 20 0;
+#X connect 10 0 9 1;
+#X connect 11 0 6 0;
+#X connect 12 0 11 1;
+#X connect 13 0 21 0;
+#X connect 14 0 13 1;
+#X connect 15 0 0 0;
+#X connect 15 0 2 0;
+#X connect 15 0 4 0;
+#X connect 16 0 7 0;
+#X connect 16 0 9 0;
+#X connect 16 0 11 0;
+#X connect 16 0 13 0;
+#X connect 17 0 18 0;
+#X connect 18 0 21 0;
+#X connect 23 0 24 0;
+#X connect 24 0 22 0;
+#X coords 0 -1 1 1 250 47 2 100 100;
+#X restore 6 332 pd mics;

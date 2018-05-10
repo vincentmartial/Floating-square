@@ -1,0 +1,1370 @@
+#N canvas 594 23 525 470 10;
+#X declare -lib mrpeach;
+#X obj 22 16 servo-osc;
+#X obj 26 64 mics;
+#X obj 134 308 patch;
+#X obj 15 307 presets;
+#X obj 67 307 set-lines;
+#X obj 103 16 picos;
+#N canvas 347 237 927 409 equas1 0;
+#X obj -46 22 equa~FS-gui;
+#X msg 165 214 pk7freq 20 \, pk7active 0 \, pk7gain -30 \, pk7res 0.1
+\, pk6freq 20 \, pk6active 0 \, pk6gain -30 \, pk6res 0.1 \, pk5active
+0 \, pk5gain -30 \, pk5freq 20 \, pk4active 0 \, pk4gain -30 \, pk4res
+0.1 \, pk4freq 20 \, gain 0 \, lpres 0.707946 \, lpfreq 20 \, lpactive
+0 \, hsgain -30 \, hsres 0.1 \, hsfreq 20 \, hsactive 0 \, pk3gain
+-30 \, pk3res 0.1 \, pk3freq 20 \, pk3active 0 \, pk2gain -30 \, pk2res
+0.1 \, pk2freq 20 \, pk2active 0 \, pk1gain -30 \, pk1res 0.1 \, pk1freq
+20 \, pk1active 0 \, lsgain -30 \, lsres 0.1 \, lsfreq 20 \, lsactive
+0 \, hpres 0.707946 \, hpactive 0 \, hpfreq 20 \,;
+#X obj -7 5 r~ eq1;
+#X obj -46 223 throw~ mix1;
+#N canvas 814 422 450 300 conduite 0;
+#X obj 53 98 outlet;
+#X obj 56 -32 cycle 2;
+#X msg 56 -51 reset;
+#X obj 56 -68 metro 50;
+#X obj 56 -99 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 56 15 pk1active \$1 \, pk1freq \$2 \, pk1gain \$3 \, pk1res
+\$4;
+#X msg 53 68 pk2active \$1 \, pk2freq \$2 \, pk2gain \$3 \, pk2res
+\$4;
+#X msg 149 -8 0 840 20 10;
+#X msg 53 41 1 740 20 120;
+#X msg 144 40 0 740 20 10;
+#X msg 56 -6 1 840 25 20;
+#X connect 1 0 9 0;
+#X connect 1 0 10 0;
+#X connect 1 1 8 0;
+#X connect 1 1 7 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 10 0 5 0;
+#X restore 736 5 pd conduite;
+#X obj 708 28 vradio 15 1 0 15 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#N canvas 370 284 738 258 presets 0;
+#X obj 55 26 inlet;
+#X obj 130 26 inlet;
+#X obj 204 26 inlet;
+#X obj 297 26 inlet;
+#X obj 387 26 inlet;
+#X obj 472 28 inlet;
+#X obj 563 29 inlet;
+#X obj 648 30 inlet;
+#X msg 130 95;
+#X msg 204 97;
+#X msg 297 93;
+#X msg 387 93;
+#X msg 472 94;
+#X msg 563 94;
+#X msg 648 96;
+#X obj 130 230 outlet;
+#X msg 55 52 pk7freq 20 \, pk7active 0 \, pk7gain -30 \, pk7res 0.1
+\, pk6freq 20 \, pk6active 0 \, pk6gain -30 \, pk6res 0.1 \, pk5active
+0 \, pk5gain -30 \, pk5freq 20 \, pk4active 0 \, pk4gain -30 \, pk4res
+0.1 \, pk4freq 20 \, gain 0 \, lpres 0.707946 \, lpfreq 20 \, lpactive
+0 \, hsgain -30 \, hsres 0.1 \, hsfreq 20 \, hsactive 0 \, pk3gain
+-30 \, pk3res 0.1 \, pk3freq 20 \, pk3active 0 \, pk2gain -30 \, pk2res
+0.1 \, pk2freq 20 \, pk2active 0 \, pk1gain -30 \, pk1res 0.1 \, pk1freq
+20 \, pk1active 0 \, lsgain -30 \, lsres 0.1 \, lsfreq 20 \, lsactive
+0 \, hpres 0.707946 \, hpactive 0 \, hpfreq 20 \,;
+#X connect 0 0 16 0;
+#X connect 1 0 8 0;
+#X connect 2 0 9 0;
+#X connect 3 0 10 0;
+#X connect 4 0 11 0;
+#X connect 5 0 12 0;
+#X connect 6 0 13 0;
+#X connect 7 0 14 0;
+#X connect 8 0 15 0;
+#X connect 9 0 15 0;
+#X connect 10 0 15 0;
+#X connect 11 0 15 0;
+#X connect 12 0 15 0;
+#X connect 13 0 15 0;
+#X connect 14 0 15 0;
+#X connect 16 0 15 0;
+#X restore 678 273 pd presets;
+#X obj 678 253 sel 0 1 2 3 4 5 6 7;
+#X obj 679 296 sel 8 9 10 11 12 13 14 15;
+#N canvas 370 284 738 258 presets 0;
+#X obj 55 26 inlet;
+#X obj 130 26 inlet;
+#X obj 204 26 inlet;
+#X obj 297 26 inlet;
+#X obj 387 26 inlet;
+#X obj 472 28 inlet;
+#X obj 563 29 inlet;
+#X obj 648 30 inlet;
+#X msg 55 94;
+#X msg 130 95;
+#X msg 204 97;
+#X msg 297 93;
+#X msg 387 93;
+#X msg 472 94;
+#X msg 563 94;
+#X msg 648 96;
+#X obj 130 230 outlet;
+#X connect 0 0 8 0;
+#X connect 1 0 9 0;
+#X connect 2 0 10 0;
+#X connect 3 0 11 0;
+#X connect 4 0 12 0;
+#X connect 5 0 13 0;
+#X connect 6 0 14 0;
+#X connect 7 0 15 0;
+#X connect 8 0 16 0;
+#X connect 9 0 16 0;
+#X connect 10 0 16 0;
+#X connect 11 0 16 0;
+#X connect 12 0 16 0;
+#X connect 13 0 16 0;
+#X connect 14 0 16 0;
+#X connect 15 0 16 0;
+#X restore 678 326 pd presets;
+#X connect 0 0 3 0;
+#X connect 0 2 1 0;
+#X connect 2 0 0 1;
+#X connect 4 0 0 2;
+#X connect 5 0 7 0;
+#X connect 6 0 0 2;
+#X connect 7 0 6 0;
+#X connect 7 1 6 1;
+#X connect 7 2 6 2;
+#X connect 7 3 6 3;
+#X connect 7 4 6 4;
+#X connect 7 5 6 5;
+#X connect 7 6 6 6;
+#X connect 7 7 6 7;
+#X connect 7 8 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 9 1;
+#X connect 8 2 9 2;
+#X connect 8 3 9 3;
+#X connect 8 4 9 4;
+#X connect 8 5 9 5;
+#X connect 8 6 9 6;
+#X connect 8 7 9 7;
+#X connect 9 0 0 2;
+#X restore 91 66 pd equas1;
+#N canvas 347 237 927 409 equas2 0;
+#X obj -46 22 equa~FS-gui;
+#X msg 165 214 pk7freq 298.499 \, pk7active 1 \, pk7gain 3.91304 \,
+pk7res 5.48442 \, pk6active 1 \, pk6gain -5.65217 \, pk5active 1 \,
+pk5gain -16.087 \, pk4active 1 \, pk4gain -10.8696 \, pk4res 1.1053
+\, pk4freq 134.004 \,;
+#N canvas 814 422 450 300 conduite 0;
+#X obj 53 98 outlet;
+#X obj 56 -32 cycle 2;
+#X msg 56 -51 reset;
+#X obj 56 -68 metro 50;
+#X obj 56 -99 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 56 15 pk1active \$1 \, pk1freq \$2 \, pk1gain \$3 \, pk1res
+\$4;
+#X msg 53 68 pk2active \$1 \, pk2freq \$2 \, pk2gain \$3 \, pk2res
+\$4;
+#X msg 149 -8 0 840 20 10;
+#X msg 53 41 1 740 20 120;
+#X msg 144 40 0 740 20 10;
+#X msg 56 -6 1 840 25 20;
+#X connect 1 0 9 0;
+#X connect 1 0 10 0;
+#X connect 1 1 8 0;
+#X connect 1 1 7 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 10 0 5 0;
+#X restore 736 5 pd conduite;
+#X obj -7 5 r~ eq2;
+#X obj -46 223 throw~ mix2;
+#X obj 708 20 vradio 15 1 0 15 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#N canvas 370 284 738 258 presets 0;
+#X obj 55 26 inlet;
+#X obj 130 26 inlet;
+#X obj 204 26 inlet;
+#X obj 297 26 inlet;
+#X obj 387 26 inlet;
+#X obj 472 28 inlet;
+#X obj 563 29 inlet;
+#X obj 648 30 inlet;
+#X msg 130 95;
+#X msg 204 97;
+#X msg 297 93;
+#X msg 387 93;
+#X msg 472 94;
+#X msg 563 94;
+#X msg 648 96;
+#X obj 130 230 outlet;
+#X msg 55 52 pk7freq 20 \, pk7active 0 \, pk7gain -30 \, pk7res 0.1
+\, pk6freq 20 \, pk6active 0 \, pk6gain -30 \, pk6res 0.1 \, pk5active
+0 \, pk5gain -30 \, pk5freq 20 \, pk4active 0 \, pk4gain -30 \, pk4res
+0.1 \, pk4freq 20 \, gain 0 \, lpres 0.707946 \, lpfreq 20 \, lpactive
+0 \, hsgain -30 \, hsres 0.1 \, hsfreq 20 \, hsactive 0 \, pk3gain
+-30 \, pk3res 0.1 \, pk3freq 20 \, pk3active 0 \, pk2gain -30 \, pk2res
+0.1 \, pk2freq 20 \, pk2active 0 \, pk1gain -30 \, pk1res 0.1 \, pk1freq
+20 \, pk1active 0 \, lsgain -30 \, lsres 0.1 \, lsfreq 20 \, lsactive
+0 \, hpres 0.707946 \, hpactive 0 \, hpfreq 20 \,;
+#X connect 0 0 16 0;
+#X connect 1 0 8 0;
+#X connect 2 0 9 0;
+#X connect 3 0 10 0;
+#X connect 4 0 11 0;
+#X connect 5 0 12 0;
+#X connect 6 0 13 0;
+#X connect 7 0 14 0;
+#X connect 8 0 15 0;
+#X connect 9 0 15 0;
+#X connect 10 0 15 0;
+#X connect 11 0 15 0;
+#X connect 12 0 15 0;
+#X connect 13 0 15 0;
+#X connect 14 0 15 0;
+#X connect 16 0 15 0;
+#X restore 678 265 pd presets;
+#X obj 678 245 sel 0 1 2 3 4 5 6 7;
+#X obj 679 288 sel 8 9 10 11 12 13 14 15;
+#N canvas 370 284 738 258 presets 0;
+#X obj 55 26 inlet;
+#X obj 130 26 inlet;
+#X obj 204 26 inlet;
+#X obj 297 26 inlet;
+#X obj 387 26 inlet;
+#X obj 472 28 inlet;
+#X obj 563 29 inlet;
+#X obj 648 30 inlet;
+#X msg 55 94;
+#X msg 130 95;
+#X msg 204 97;
+#X msg 297 93;
+#X msg 387 93;
+#X msg 472 94;
+#X msg 563 94;
+#X msg 648 96;
+#X obj 130 230 outlet;
+#X connect 0 0 8 0;
+#X connect 1 0 9 0;
+#X connect 2 0 10 0;
+#X connect 3 0 11 0;
+#X connect 4 0 12 0;
+#X connect 5 0 13 0;
+#X connect 6 0 14 0;
+#X connect 7 0 15 0;
+#X connect 8 0 16 0;
+#X connect 9 0 16 0;
+#X connect 10 0 16 0;
+#X connect 11 0 16 0;
+#X connect 12 0 16 0;
+#X connect 13 0 16 0;
+#X connect 14 0 16 0;
+#X connect 15 0 16 0;
+#X restore 678 318 pd presets;
+#X connect 0 0 4 0;
+#X connect 0 2 1 0;
+#X connect 2 0 0 2;
+#X connect 3 0 0 1;
+#X connect 5 0 7 0;
+#X connect 6 0 0 2;
+#X connect 7 0 6 0;
+#X connect 7 1 6 1;
+#X connect 7 2 6 2;
+#X connect 7 3 6 3;
+#X connect 7 4 6 4;
+#X connect 7 5 6 5;
+#X connect 7 6 6 6;
+#X connect 7 7 6 7;
+#X connect 7 8 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 9 1;
+#X connect 8 2 9 2;
+#X connect 8 3 9 3;
+#X connect 8 4 9 4;
+#X connect 8 5 9 5;
+#X connect 8 6 9 6;
+#X connect 8 7 9 7;
+#X connect 9 0 0 2;
+#X restore 91 90 pd equas2;
+#N canvas 347 237 927 409 equas3 0;
+#X obj -46 22 equa~FS-gui;
+#X msg 165 214 pk7freq 298.499 \, pk7active 1 \, pk7gain 3.91304 \,
+pk7res 5.48442 \, pk6active 1 \, pk6gain -5.65217 \, pk5active 1 \,
+pk5gain -16.087 \, pk4active 1 \, pk4gain -10.8696 \, pk4res 1.1053
+\, pk4freq 134.004 \,;
+#N canvas 814 422 450 300 conduite 0;
+#X obj 53 98 outlet;
+#X obj 56 -32 cycle 2;
+#X msg 56 -51 reset;
+#X obj 56 -68 metro 50;
+#X obj 56 -99 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 56 15 pk1active \$1 \, pk1freq \$2 \, pk1gain \$3 \, pk1res
+\$4;
+#X msg 53 68 pk2active \$1 \, pk2freq \$2 \, pk2gain \$3 \, pk2res
+\$4;
+#X msg 149 -8 0 840 20 10;
+#X msg 53 41 1 740 20 120;
+#X msg 144 40 0 740 20 10;
+#X msg 56 -6 1 840 25 20;
+#X connect 1 0 9 0;
+#X connect 1 0 10 0;
+#X connect 1 1 8 0;
+#X connect 1 1 7 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 10 0 5 0;
+#X restore 736 5 pd conduite;
+#X obj -7 5 r~ eq3;
+#X obj -46 223 throw~ mix3;
+#X obj 708 22 vradio 15 1 0 15 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#N canvas 370 284 738 258 presets 0;
+#X obj 55 26 inlet;
+#X obj 130 26 inlet;
+#X obj 204 26 inlet;
+#X obj 297 26 inlet;
+#X obj 387 26 inlet;
+#X obj 472 28 inlet;
+#X obj 563 29 inlet;
+#X obj 648 30 inlet;
+#X msg 130 95;
+#X msg 204 97;
+#X msg 297 93;
+#X msg 387 93;
+#X msg 472 94;
+#X msg 563 94;
+#X msg 648 96;
+#X obj 130 230 outlet;
+#X msg 55 52 pk7freq 20 \, pk7active 0 \, pk7gain -30 \, pk7res 0.1
+\, pk6freq 20 \, pk6active 0 \, pk6gain -30 \, pk6res 0.1 \, pk5active
+0 \, pk5gain -30 \, pk5freq 20 \, pk4active 0 \, pk4gain -30 \, pk4res
+0.1 \, pk4freq 20 \, gain 0 \, lpres 0.707946 \, lpfreq 20 \, lpactive
+0 \, hsgain -30 \, hsres 0.1 \, hsfreq 20 \, hsactive 0 \, pk3gain
+-30 \, pk3res 0.1 \, pk3freq 20 \, pk3active 0 \, pk2gain -30 \, pk2res
+0.1 \, pk2freq 20 \, pk2active 0 \, pk1gain -30 \, pk1res 0.1 \, pk1freq
+20 \, pk1active 0 \, lsgain -30 \, lsres 0.1 \, lsfreq 20 \, lsactive
+0 \, hpres 0.707946 \, hpactive 0 \, hpfreq 20 \,;
+#X connect 0 0 16 0;
+#X connect 1 0 8 0;
+#X connect 2 0 9 0;
+#X connect 3 0 10 0;
+#X connect 4 0 11 0;
+#X connect 5 0 12 0;
+#X connect 6 0 13 0;
+#X connect 7 0 14 0;
+#X connect 8 0 15 0;
+#X connect 9 0 15 0;
+#X connect 10 0 15 0;
+#X connect 11 0 15 0;
+#X connect 12 0 15 0;
+#X connect 13 0 15 0;
+#X connect 14 0 15 0;
+#X connect 16 0 15 0;
+#X restore 678 267 pd presets;
+#X obj 678 247 sel 0 1 2 3 4 5 6 7;
+#X obj 679 290 sel 8 9 10 11 12 13 14 15;
+#N canvas 370 284 738 258 presets 0;
+#X obj 55 26 inlet;
+#X obj 130 26 inlet;
+#X obj 204 26 inlet;
+#X obj 297 26 inlet;
+#X obj 387 26 inlet;
+#X obj 472 28 inlet;
+#X obj 563 29 inlet;
+#X obj 648 30 inlet;
+#X msg 55 94;
+#X msg 130 95;
+#X msg 204 97;
+#X msg 297 93;
+#X msg 387 93;
+#X msg 472 94;
+#X msg 563 94;
+#X msg 648 96;
+#X obj 130 230 outlet;
+#X connect 0 0 8 0;
+#X connect 1 0 9 0;
+#X connect 2 0 10 0;
+#X connect 3 0 11 0;
+#X connect 4 0 12 0;
+#X connect 5 0 13 0;
+#X connect 6 0 14 0;
+#X connect 7 0 15 0;
+#X connect 8 0 16 0;
+#X connect 9 0 16 0;
+#X connect 10 0 16 0;
+#X connect 11 0 16 0;
+#X connect 12 0 16 0;
+#X connect 13 0 16 0;
+#X connect 14 0 16 0;
+#X connect 15 0 16 0;
+#X restore 678 320 pd presets;
+#X connect 0 0 4 0;
+#X connect 0 2 1 0;
+#X connect 2 0 0 2;
+#X connect 3 0 0 1;
+#X connect 5 0 7 0;
+#X connect 6 0 0 2;
+#X connect 7 0 6 0;
+#X connect 7 1 6 1;
+#X connect 7 2 6 2;
+#X connect 7 3 6 3;
+#X connect 7 4 6 4;
+#X connect 7 5 6 5;
+#X connect 7 6 6 6;
+#X connect 7 7 6 7;
+#X connect 7 8 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 9 1;
+#X connect 8 2 9 2;
+#X connect 8 3 9 3;
+#X connect 8 4 9 4;
+#X connect 8 5 9 5;
+#X connect 8 6 9 6;
+#X connect 8 7 9 7;
+#X connect 9 0 0 2;
+#X restore 92 115 pd equas3;
+#N canvas 347 237 927 409 equas4 0;
+#X obj -46 22 equa~FS-gui;
+#X msg 165 214 pk7freq 298.499 \, pk7active 1 \, pk7gain 3.91304 \,
+pk7res 5.48442 \, pk6active 1 \, pk6gain -5.65217 \, pk5active 1 \,
+pk5gain -16.087 \, pk4active 1 \, pk4gain -10.8696 \, pk4res 1.1053
+\, pk4freq 134.004 \,;
+#N canvas 814 422 450 300 conduite 0;
+#X obj 53 98 outlet;
+#X obj 56 -32 cycle 2;
+#X msg 56 -51 reset;
+#X obj 56 -68 metro 50;
+#X obj 56 -99 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 56 15 pk1active \$1 \, pk1freq \$2 \, pk1gain \$3 \, pk1res
+\$4;
+#X msg 53 68 pk2active \$1 \, pk2freq \$2 \, pk2gain \$3 \, pk2res
+\$4;
+#X msg 149 -8 0 840 20 10;
+#X msg 53 41 1 740 20 120;
+#X msg 144 40 0 740 20 10;
+#X msg 56 -6 1 840 25 20;
+#X connect 1 0 9 0;
+#X connect 1 0 10 0;
+#X connect 1 1 8 0;
+#X connect 1 1 7 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 10 0 5 0;
+#X restore 736 5 pd conduite;
+#X obj -7 5 r~ eq4;
+#X obj -46 223 throw~ mix4;
+#X obj 708 26 vradio 15 1 0 15 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#N canvas 370 284 738 258 presets 0;
+#X obj 55 26 inlet;
+#X obj 130 26 inlet;
+#X obj 204 26 inlet;
+#X obj 297 26 inlet;
+#X obj 387 26 inlet;
+#X obj 472 28 inlet;
+#X obj 563 29 inlet;
+#X obj 648 30 inlet;
+#X msg 130 95;
+#X msg 204 97;
+#X msg 297 93;
+#X msg 387 93;
+#X msg 472 94;
+#X msg 563 94;
+#X msg 648 96;
+#X obj 130 230 outlet;
+#X msg 55 52 pk7freq 20 \, pk7active 0 \, pk7gain -30 \, pk7res 0.1
+\, pk6freq 20 \, pk6active 0 \, pk6gain -30 \, pk6res 0.1 \, pk5active
+0 \, pk5gain -30 \, pk5freq 20 \, pk4active 0 \, pk4gain -30 \, pk4res
+0.1 \, pk4freq 20 \, gain 0 \, lpres 0.707946 \, lpfreq 20 \, lpactive
+0 \, hsgain -30 \, hsres 0.1 \, hsfreq 20 \, hsactive 0 \, pk3gain
+-30 \, pk3res 0.1 \, pk3freq 20 \, pk3active 0 \, pk2gain -30 \, pk2res
+0.1 \, pk2freq 20 \, pk2active 0 \, pk1gain -30 \, pk1res 0.1 \, pk1freq
+20 \, pk1active 0 \, lsgain -30 \, lsres 0.1 \, lsfreq 20 \, lsactive
+0 \, hpres 0.707946 \, hpactive 0 \, hpfreq 20 \,;
+#X connect 0 0 16 0;
+#X connect 1 0 8 0;
+#X connect 2 0 9 0;
+#X connect 3 0 10 0;
+#X connect 4 0 11 0;
+#X connect 5 0 12 0;
+#X connect 6 0 13 0;
+#X connect 7 0 14 0;
+#X connect 8 0 15 0;
+#X connect 9 0 15 0;
+#X connect 10 0 15 0;
+#X connect 11 0 15 0;
+#X connect 12 0 15 0;
+#X connect 13 0 15 0;
+#X connect 14 0 15 0;
+#X connect 16 0 15 0;
+#X restore 678 271 pd presets;
+#X obj 678 251 sel 0 1 2 3 4 5 6 7;
+#X obj 679 294 sel 8 9 10 11 12 13 14 15;
+#N canvas 370 284 738 258 presets 0;
+#X obj 55 26 inlet;
+#X obj 130 26 inlet;
+#X obj 204 26 inlet;
+#X obj 297 26 inlet;
+#X obj 387 26 inlet;
+#X obj 472 28 inlet;
+#X obj 563 29 inlet;
+#X obj 648 30 inlet;
+#X msg 55 94;
+#X msg 130 95;
+#X msg 204 97;
+#X msg 297 93;
+#X msg 387 93;
+#X msg 472 94;
+#X msg 563 94;
+#X msg 648 96;
+#X obj 130 230 outlet;
+#X connect 0 0 8 0;
+#X connect 1 0 9 0;
+#X connect 2 0 10 0;
+#X connect 3 0 11 0;
+#X connect 4 0 12 0;
+#X connect 5 0 13 0;
+#X connect 6 0 14 0;
+#X connect 7 0 15 0;
+#X connect 8 0 16 0;
+#X connect 9 0 16 0;
+#X connect 10 0 16 0;
+#X connect 11 0 16 0;
+#X connect 12 0 16 0;
+#X connect 13 0 16 0;
+#X connect 14 0 16 0;
+#X connect 15 0 16 0;
+#X restore 678 324 pd presets;
+#X connect 0 0 4 0;
+#X connect 0 2 1 0;
+#X connect 2 0 0 2;
+#X connect 3 0 0 1;
+#X connect 5 0 7 0;
+#X connect 6 0 0 2;
+#X connect 7 0 6 0;
+#X connect 7 1 6 1;
+#X connect 7 2 6 2;
+#X connect 7 3 6 3;
+#X connect 7 4 6 4;
+#X connect 7 5 6 5;
+#X connect 7 6 6 6;
+#X connect 7 7 6 7;
+#X connect 7 8 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 9 1;
+#X connect 8 2 9 2;
+#X connect 8 3 9 3;
+#X connect 8 4 9 4;
+#X connect 8 5 9 5;
+#X connect 8 6 9 6;
+#X connect 8 7 9 7;
+#X connect 9 0 0 2;
+#X restore 92 139 pd equas4;
+#N canvas 347 67 942 509 equas5 0;
+#X obj -40 -41 equa~FS-gui;
+#X msg 171 151 pk7freq 298.499 \, pk7active 1 \, pk7gain 3.91304 \,
+pk7res 5.48442 \, pk6active 1 \, pk6gain -5.65217 \, pk5active 1 \,
+pk5gain -16.087 \, pk4active 1 \, pk4gain -10.8696 \, pk4res 1.1053
+\, pk4freq 134.004 \,;
+#N canvas 814 422 450 300 conduite 0;
+#X obj 53 98 outlet;
+#X obj 56 -32 cycle 2;
+#X msg 56 -51 reset;
+#X obj 56 -68 metro 50;
+#X obj 56 -99 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 56 15 pk1active \$1 \, pk1freq \$2 \, pk1gain \$3 \, pk1res
+\$4;
+#X msg 53 68 pk2active \$1 \, pk2freq \$2 \, pk2gain \$3 \, pk2res
+\$4;
+#X msg 149 -8 0 840 20 10;
+#X msg 53 41 1 740 20 120;
+#X msg 144 40 0 740 20 10;
+#X msg 56 -6 1 840 25 20;
+#X connect 1 0 9 0;
+#X connect 1 0 10 0;
+#X connect 1 1 8 0;
+#X connect 1 1 7 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 10 0 5 0;
+#X restore 742 -58 pd conduite;
+#X obj -1 -58 r~ eq5;
+#X obj -40 160 throw~ mix5;
+#X obj 714 -37 vradio 15 1 0 15 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#N canvas 370 284 738 258 presets 0;
+#X obj 55 26 inlet;
+#X obj 130 26 inlet;
+#X obj 204 26 inlet;
+#X obj 297 26 inlet;
+#X obj 387 26 inlet;
+#X obj 472 28 inlet;
+#X obj 563 29 inlet;
+#X obj 648 30 inlet;
+#X msg 130 95;
+#X msg 204 97;
+#X msg 297 93;
+#X msg 387 93;
+#X msg 472 94;
+#X msg 563 94;
+#X msg 648 96;
+#X obj 130 230 outlet;
+#X msg 55 52 pk7freq 20 \, pk7active 0 \, pk7gain -30 \, pk7res 0.1
+\, pk6freq 20 \, pk6active 0 \, pk6gain -30 \, pk6res 0.1 \, pk5active
+0 \, pk5gain -30 \, pk5freq 20 \, pk4active 0 \, pk4gain -30 \, pk4res
+0.1 \, pk4freq 20 \, gain 0 \, lpres 0.707946 \, lpfreq 20 \, lpactive
+0 \, hsgain -30 \, hsres 0.1 \, hsfreq 20 \, hsactive 0 \, pk3gain
+-30 \, pk3res 0.1 \, pk3freq 20 \, pk3active 0 \, pk2gain -30 \, pk2res
+0.1 \, pk2freq 20 \, pk2active 0 \, pk1gain -30 \, pk1res 0.1 \, pk1freq
+20 \, pk1active 0 \, lsgain -30 \, lsres 0.1 \, lsfreq 20 \, lsactive
+0 \, hpres 0.707946 \, hpactive 0 \, hpfreq 20 \,;
+#X connect 0 0 16 0;
+#X connect 1 0 8 0;
+#X connect 2 0 9 0;
+#X connect 3 0 10 0;
+#X connect 4 0 11 0;
+#X connect 5 0 12 0;
+#X connect 6 0 13 0;
+#X connect 7 0 14 0;
+#X connect 8 0 15 0;
+#X connect 9 0 15 0;
+#X connect 10 0 15 0;
+#X connect 11 0 15 0;
+#X connect 12 0 15 0;
+#X connect 13 0 15 0;
+#X connect 14 0 15 0;
+#X connect 16 0 15 0;
+#X restore 684 208 pd presets;
+#X obj 684 188 sel 0 1 2 3 4 5 6 7;
+#X obj 685 231 sel 8 9 10 11 12 13 14 15;
+#N canvas 370 284 738 258 presets 0;
+#X obj 55 26 inlet;
+#X obj 130 26 inlet;
+#X obj 204 26 inlet;
+#X obj 297 26 inlet;
+#X obj 387 26 inlet;
+#X obj 472 28 inlet;
+#X obj 563 29 inlet;
+#X obj 648 30 inlet;
+#X msg 55 94;
+#X msg 130 95;
+#X msg 204 97;
+#X msg 297 93;
+#X msg 387 93;
+#X msg 472 94;
+#X msg 563 94;
+#X msg 648 96;
+#X obj 130 230 outlet;
+#X connect 0 0 8 0;
+#X connect 1 0 9 0;
+#X connect 2 0 10 0;
+#X connect 3 0 11 0;
+#X connect 4 0 12 0;
+#X connect 5 0 13 0;
+#X connect 6 0 14 0;
+#X connect 7 0 15 0;
+#X connect 8 0 16 0;
+#X connect 9 0 16 0;
+#X connect 10 0 16 0;
+#X connect 11 0 16 0;
+#X connect 12 0 16 0;
+#X connect 13 0 16 0;
+#X connect 14 0 16 0;
+#X connect 15 0 16 0;
+#X restore 684 261 pd presets;
+#X connect 0 0 4 0;
+#X connect 0 2 1 0;
+#X connect 2 0 0 2;
+#X connect 3 0 0 1;
+#X connect 5 0 7 0;
+#X connect 6 0 0 2;
+#X connect 7 0 6 0;
+#X connect 7 1 6 1;
+#X connect 7 2 6 2;
+#X connect 7 3 6 3;
+#X connect 7 4 6 4;
+#X connect 7 5 6 5;
+#X connect 7 6 6 6;
+#X connect 7 7 6 7;
+#X connect 7 8 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 9 1;
+#X connect 8 2 9 2;
+#X connect 8 3 9 3;
+#X connect 8 4 9 4;
+#X connect 8 5 9 5;
+#X connect 8 6 9 6;
+#X connect 8 7 9 7;
+#X connect 9 0 0 2;
+#X restore 92 164 pd equas5;
+#N canvas 347 237 927 409 equas6 0;
+#X obj -46 22 equa~FS-gui;
+#X msg 165 214 pk7freq 298.499 \, pk7active 1 \, pk7gain 3.91304 \,
+pk7res 5.48442 \, pk6active 1 \, pk6gain -5.65217 \, pk5active 1 \,
+pk5gain -16.087 \, pk4active 1 \, pk4gain -10.8696 \, pk4res 1.1053
+\, pk4freq 134.004 \,;
+#N canvas 814 422 450 300 conduite 0;
+#X obj 53 98 outlet;
+#X obj 56 -32 cycle 2;
+#X msg 56 -51 reset;
+#X obj 56 -68 metro 50;
+#X obj 56 -99 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 56 15 pk1active \$1 \, pk1freq \$2 \, pk1gain \$3 \, pk1res
+\$4;
+#X msg 53 68 pk2active \$1 \, pk2freq \$2 \, pk2gain \$3 \, pk2res
+\$4;
+#X msg 149 -8 0 840 20 10;
+#X msg 53 41 1 740 20 120;
+#X msg 144 40 0 740 20 10;
+#X msg 56 -6 1 840 25 20;
+#X connect 1 0 9 0;
+#X connect 1 0 10 0;
+#X connect 1 1 8 0;
+#X connect 1 1 7 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 10 0 5 0;
+#X restore 736 5 pd conduite;
+#X obj -7 5 r~ eq6;
+#X obj -46 223 throw~ mix6;
+#X obj 708 23 vradio 15 1 0 15 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#N canvas 370 284 738 258 presets 0;
+#X obj 55 26 inlet;
+#X obj 130 26 inlet;
+#X obj 204 26 inlet;
+#X obj 297 26 inlet;
+#X obj 387 26 inlet;
+#X obj 472 28 inlet;
+#X obj 563 29 inlet;
+#X obj 648 30 inlet;
+#X msg 130 95;
+#X msg 204 97;
+#X msg 297 93;
+#X msg 387 93;
+#X msg 472 94;
+#X msg 563 94;
+#X msg 648 96;
+#X obj 130 230 outlet;
+#X msg 55 52 pk7freq 20 \, pk7active 0 \, pk7gain -30 \, pk7res 0.1
+\, pk6freq 20 \, pk6active 0 \, pk6gain -30 \, pk6res 0.1 \, pk5active
+0 \, pk5gain -30 \, pk5freq 20 \, pk4active 0 \, pk4gain -30 \, pk4res
+0.1 \, pk4freq 20 \, gain 0 \, lpres 0.707946 \, lpfreq 20 \, lpactive
+0 \, hsgain -30 \, hsres 0.1 \, hsfreq 20 \, hsactive 0 \, pk3gain
+-30 \, pk3res 0.1 \, pk3freq 20 \, pk3active 0 \, pk2gain -30 \, pk2res
+0.1 \, pk2freq 20 \, pk2active 0 \, pk1gain -30 \, pk1res 0.1 \, pk1freq
+20 \, pk1active 0 \, lsgain -30 \, lsres 0.1 \, lsfreq 20 \, lsactive
+0 \, hpres 0.707946 \, hpactive 0 \, hpfreq 20 \,;
+#X connect 0 0 16 0;
+#X connect 1 0 8 0;
+#X connect 2 0 9 0;
+#X connect 3 0 10 0;
+#X connect 4 0 11 0;
+#X connect 5 0 12 0;
+#X connect 6 0 13 0;
+#X connect 7 0 14 0;
+#X connect 8 0 15 0;
+#X connect 9 0 15 0;
+#X connect 10 0 15 0;
+#X connect 11 0 15 0;
+#X connect 12 0 15 0;
+#X connect 13 0 15 0;
+#X connect 14 0 15 0;
+#X connect 16 0 15 0;
+#X restore 678 268 pd presets;
+#X obj 678 248 sel 0 1 2 3 4 5 6 7;
+#X obj 679 291 sel 8 9 10 11 12 13 14 15;
+#N canvas 370 284 738 258 presets 0;
+#X obj 55 26 inlet;
+#X obj 130 26 inlet;
+#X obj 204 26 inlet;
+#X obj 297 26 inlet;
+#X obj 387 26 inlet;
+#X obj 472 28 inlet;
+#X obj 563 29 inlet;
+#X obj 648 30 inlet;
+#X msg 55 94;
+#X msg 130 95;
+#X msg 204 97;
+#X msg 297 93;
+#X msg 387 93;
+#X msg 472 94;
+#X msg 563 94;
+#X msg 648 96;
+#X obj 130 230 outlet;
+#X connect 0 0 8 0;
+#X connect 1 0 9 0;
+#X connect 2 0 10 0;
+#X connect 3 0 11 0;
+#X connect 4 0 12 0;
+#X connect 5 0 13 0;
+#X connect 6 0 14 0;
+#X connect 7 0 15 0;
+#X connect 8 0 16 0;
+#X connect 9 0 16 0;
+#X connect 10 0 16 0;
+#X connect 11 0 16 0;
+#X connect 12 0 16 0;
+#X connect 13 0 16 0;
+#X connect 14 0 16 0;
+#X connect 15 0 16 0;
+#X restore 678 321 pd presets;
+#X connect 0 0 4 0;
+#X connect 0 2 1 0;
+#X connect 2 0 0 2;
+#X connect 3 0 0 1;
+#X connect 5 0 7 0;
+#X connect 6 0 0 2;
+#X connect 7 0 6 0;
+#X connect 7 1 6 1;
+#X connect 7 2 6 2;
+#X connect 7 3 6 3;
+#X connect 7 4 6 4;
+#X connect 7 5 6 5;
+#X connect 7 6 6 6;
+#X connect 7 7 6 7;
+#X connect 7 8 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 9 1;
+#X connect 8 2 9 2;
+#X connect 8 3 9 3;
+#X connect 8 4 9 4;
+#X connect 8 5 9 5;
+#X connect 8 6 9 6;
+#X connect 8 7 9 7;
+#X connect 9 0 0 2;
+#X restore 92 188 pd equas6;
+#N canvas 347 237 927 409 equas7 0;
+#X obj -46 22 equa~FS-gui;
+#X msg 165 214 pk7freq 298.499 \, pk7active 1 \, pk7gain 3.91304 \,
+pk7res 5.48442 \, pk6active 1 \, pk6gain -5.65217 \, pk5active 1 \,
+pk5gain -16.087 \, pk4active 1 \, pk4gain -10.8696 \, pk4res 1.1053
+\, pk4freq 134.004 \,;
+#N canvas 814 422 450 300 conduite 0;
+#X obj 53 98 outlet;
+#X obj 56 -32 cycle 2;
+#X msg 56 -51 reset;
+#X obj 56 -68 metro 50;
+#X obj 56 -99 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 56 15 pk1active \$1 \, pk1freq \$2 \, pk1gain \$3 \, pk1res
+\$4;
+#X msg 53 68 pk2active \$1 \, pk2freq \$2 \, pk2gain \$3 \, pk2res
+\$4;
+#X msg 149 -8 0 840 20 10;
+#X msg 53 41 1 740 20 120;
+#X msg 144 40 0 740 20 10;
+#X msg 56 -6 1 840 25 20;
+#X connect 1 0 9 0;
+#X connect 1 0 10 0;
+#X connect 1 1 8 0;
+#X connect 1 1 7 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 10 0 5 0;
+#X restore 736 5 pd conduite;
+#X obj -7 5 r~ eq7;
+#X obj -46 223 throw~ mix7;
+#X obj 708 23 vradio 15 1 0 15 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#N canvas 370 284 738 258 presets 0;
+#X obj 55 26 inlet;
+#X obj 130 26 inlet;
+#X obj 204 26 inlet;
+#X obj 297 26 inlet;
+#X obj 387 26 inlet;
+#X obj 472 28 inlet;
+#X obj 563 29 inlet;
+#X obj 648 30 inlet;
+#X msg 130 95;
+#X msg 204 97;
+#X msg 297 93;
+#X msg 387 93;
+#X msg 472 94;
+#X msg 563 94;
+#X msg 648 96;
+#X obj 130 230 outlet;
+#X msg 55 52 pk7freq 20 \, pk7active 0 \, pk7gain -30 \, pk7res 0.1
+\, pk6freq 20 \, pk6active 0 \, pk6gain -30 \, pk6res 0.1 \, pk5active
+0 \, pk5gain -30 \, pk5freq 20 \, pk4active 0 \, pk4gain -30 \, pk4res
+0.1 \, pk4freq 20 \, gain 0 \, lpres 0.707946 \, lpfreq 20 \, lpactive
+0 \, hsgain -30 \, hsres 0.1 \, hsfreq 20 \, hsactive 0 \, pk3gain
+-30 \, pk3res 0.1 \, pk3freq 20 \, pk3active 0 \, pk2gain -30 \, pk2res
+0.1 \, pk2freq 20 \, pk2active 0 \, pk1gain -30 \, pk1res 0.1 \, pk1freq
+20 \, pk1active 0 \, lsgain -30 \, lsres 0.1 \, lsfreq 20 \, lsactive
+0 \, hpres 0.707946 \, hpactive 0 \, hpfreq 20 \,;
+#X connect 0 0 16 0;
+#X connect 1 0 8 0;
+#X connect 2 0 9 0;
+#X connect 3 0 10 0;
+#X connect 4 0 11 0;
+#X connect 5 0 12 0;
+#X connect 6 0 13 0;
+#X connect 7 0 14 0;
+#X connect 8 0 15 0;
+#X connect 9 0 15 0;
+#X connect 10 0 15 0;
+#X connect 11 0 15 0;
+#X connect 12 0 15 0;
+#X connect 13 0 15 0;
+#X connect 14 0 15 0;
+#X connect 16 0 15 0;
+#X restore 678 268 pd presets;
+#X obj 678 248 sel 0 1 2 3 4 5 6 7;
+#X obj 679 291 sel 8 9 10 11 12 13 14 15;
+#N canvas 370 284 738 258 presets 0;
+#X obj 55 26 inlet;
+#X obj 130 26 inlet;
+#X obj 204 26 inlet;
+#X obj 297 26 inlet;
+#X obj 387 26 inlet;
+#X obj 472 28 inlet;
+#X obj 563 29 inlet;
+#X obj 648 30 inlet;
+#X msg 55 94;
+#X msg 130 95;
+#X msg 204 97;
+#X msg 297 93;
+#X msg 387 93;
+#X msg 472 94;
+#X msg 563 94;
+#X msg 648 96;
+#X obj 130 230 outlet;
+#X connect 0 0 8 0;
+#X connect 1 0 9 0;
+#X connect 2 0 10 0;
+#X connect 3 0 11 0;
+#X connect 4 0 12 0;
+#X connect 5 0 13 0;
+#X connect 6 0 14 0;
+#X connect 7 0 15 0;
+#X connect 8 0 16 0;
+#X connect 9 0 16 0;
+#X connect 10 0 16 0;
+#X connect 11 0 16 0;
+#X connect 12 0 16 0;
+#X connect 13 0 16 0;
+#X connect 14 0 16 0;
+#X connect 15 0 16 0;
+#X restore 678 321 pd presets;
+#X connect 0 0 4 0;
+#X connect 0 2 1 0;
+#X connect 2 0 0 2;
+#X connect 3 0 0 1;
+#X connect 5 0 7 0;
+#X connect 6 0 0 2;
+#X connect 7 0 6 0;
+#X connect 7 1 6 1;
+#X connect 7 2 6 2;
+#X connect 7 3 6 3;
+#X connect 7 4 6 4;
+#X connect 7 5 6 5;
+#X connect 7 6 6 6;
+#X connect 7 7 6 7;
+#X connect 7 8 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 9 1;
+#X connect 8 2 9 2;
+#X connect 8 3 9 3;
+#X connect 8 4 9 4;
+#X connect 8 5 9 5;
+#X connect 8 6 9 6;
+#X connect 8 7 9 7;
+#X connect 9 0 0 2;
+#X restore 92 213 pd equas7;
+#N canvas 347 237 927 409 equas8 0;
+#X obj -46 22 equa~FS-gui;
+#X msg 165 214 pk7freq 298.499 \, pk7active 1 \, pk7gain 3.91304 \,
+pk7res 5.48442 \, pk6active 1 \, pk6gain -5.65217 \, pk5active 1 \,
+pk5gain -16.087 \, pk4active 1 \, pk4gain -10.8696 \, pk4res 1.1053
+\, pk4freq 134.004 \,;
+#N canvas 814 422 450 300 conduite 0;
+#X obj 53 98 outlet;
+#X obj 56 -32 cycle 2;
+#X msg 56 -51 reset;
+#X obj 56 -68 metro 50;
+#X obj 56 -99 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 56 15 pk1active \$1 \, pk1freq \$2 \, pk1gain \$3 \, pk1res
+\$4;
+#X msg 53 68 pk2active \$1 \, pk2freq \$2 \, pk2gain \$3 \, pk2res
+\$4;
+#X msg 149 -8 0 840 20 10;
+#X msg 53 41 1 740 20 120;
+#X msg 144 40 0 740 20 10;
+#X msg 56 -6 1 840 25 20;
+#X connect 1 0 9 0;
+#X connect 1 0 10 0;
+#X connect 1 1 8 0;
+#X connect 1 1 7 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 10 0 5 0;
+#X restore 736 5 pd conduite;
+#X obj -7 5 r~ eq8;
+#X obj -46 223 throw~ mix8;
+#X obj 708 21 vradio 15 1 0 15 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#N canvas 370 284 738 258 presets 0;
+#X obj 55 26 inlet;
+#X obj 130 26 inlet;
+#X obj 204 26 inlet;
+#X obj 297 26 inlet;
+#X obj 387 26 inlet;
+#X obj 472 28 inlet;
+#X obj 563 29 inlet;
+#X obj 648 30 inlet;
+#X msg 130 95;
+#X msg 204 97;
+#X msg 297 93;
+#X msg 387 93;
+#X msg 472 94;
+#X msg 563 94;
+#X msg 648 96;
+#X obj 130 230 outlet;
+#X msg 55 52 pk7freq 20 \, pk7active 0 \, pk7gain -30 \, pk7res 0.1
+\, pk6freq 20 \, pk6active 0 \, pk6gain -30 \, pk6res 0.1 \, pk5active
+0 \, pk5gain -30 \, pk5freq 20 \, pk4active 0 \, pk4gain -30 \, pk4res
+0.1 \, pk4freq 20 \, gain 0 \, lpres 0.707946 \, lpfreq 20 \, lpactive
+0 \, hsgain -30 \, hsres 0.1 \, hsfreq 20 \, hsactive 0 \, pk3gain
+-30 \, pk3res 0.1 \, pk3freq 20 \, pk3active 0 \, pk2gain -30 \, pk2res
+0.1 \, pk2freq 20 \, pk2active 0 \, pk1gain -30 \, pk1res 0.1 \, pk1freq
+20 \, pk1active 0 \, lsgain -30 \, lsres 0.1 \, lsfreq 20 \, lsactive
+0 \, hpres 0.707946 \, hpactive 0 \, hpfreq 20 \,;
+#X connect 0 0 16 0;
+#X connect 1 0 8 0;
+#X connect 2 0 9 0;
+#X connect 3 0 10 0;
+#X connect 4 0 11 0;
+#X connect 5 0 12 0;
+#X connect 6 0 13 0;
+#X connect 7 0 14 0;
+#X connect 8 0 15 0;
+#X connect 9 0 15 0;
+#X connect 10 0 15 0;
+#X connect 11 0 15 0;
+#X connect 12 0 15 0;
+#X connect 13 0 15 0;
+#X connect 14 0 15 0;
+#X connect 16 0 15 0;
+#X restore 678 266 pd presets;
+#X obj 678 246 sel 0 1 2 3 4 5 6 7;
+#X obj 679 289 sel 8 9 10 11 12 13 14 15;
+#N canvas 370 284 738 258 presets 0;
+#X obj 55 26 inlet;
+#X obj 130 26 inlet;
+#X obj 204 26 inlet;
+#X obj 297 26 inlet;
+#X obj 387 26 inlet;
+#X obj 472 28 inlet;
+#X obj 563 29 inlet;
+#X obj 648 30 inlet;
+#X msg 55 94;
+#X msg 130 95;
+#X msg 204 97;
+#X msg 297 93;
+#X msg 387 93;
+#X msg 472 94;
+#X msg 563 94;
+#X msg 648 96;
+#X obj 130 230 outlet;
+#X connect 0 0 8 0;
+#X connect 1 0 9 0;
+#X connect 2 0 10 0;
+#X connect 3 0 11 0;
+#X connect 4 0 12 0;
+#X connect 5 0 13 0;
+#X connect 6 0 14 0;
+#X connect 7 0 15 0;
+#X connect 8 0 16 0;
+#X connect 9 0 16 0;
+#X connect 10 0 16 0;
+#X connect 11 0 16 0;
+#X connect 12 0 16 0;
+#X connect 13 0 16 0;
+#X connect 14 0 16 0;
+#X connect 15 0 16 0;
+#X restore 678 319 pd presets;
+#X connect 0 0 4 0;
+#X connect 0 2 1 0;
+#X connect 2 0 0 2;
+#X connect 3 0 0 1;
+#X connect 5 0 7 0;
+#X connect 6 0 0 2;
+#X connect 7 0 6 0;
+#X connect 7 1 6 1;
+#X connect 7 2 6 2;
+#X connect 7 3 6 3;
+#X connect 7 4 6 4;
+#X connect 7 5 6 5;
+#X connect 7 6 6 6;
+#X connect 7 7 6 7;
+#X connect 7 8 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 9 1;
+#X connect 8 2 9 2;
+#X connect 8 3 9 3;
+#X connect 8 4 9 4;
+#X connect 8 5 9 5;
+#X connect 8 6 9 6;
+#X connect 8 7 9 7;
+#X connect 9 0 0 2;
+#X restore 92 237 pd equas8;
+#N canvas 347 237 927 409 equas9 0;
+#X obj -46 22 equa~FS-gui;
+#X msg 165 214 pk7freq 298.499 \, pk7active 1 \, pk7gain 3.91304 \,
+pk7res 5.48442 \, pk6active 1 \, pk6gain -5.65217 \, pk5active 1 \,
+pk5gain -16.087 \, pk4active 1 \, pk4gain -10.8696 \, pk4res 1.1053
+\, pk4freq 134.004 \,;
+#N canvas 814 422 450 300 conduite 0;
+#X obj 53 98 outlet;
+#X obj 56 -32 cycle 2;
+#X msg 56 -51 reset;
+#X obj 56 -68 metro 50;
+#X obj 56 -99 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 56 15 pk1active \$1 \, pk1freq \$2 \, pk1gain \$3 \, pk1res
+\$4;
+#X msg 53 68 pk2active \$1 \, pk2freq \$2 \, pk2gain \$3 \, pk2res
+\$4;
+#X msg 149 -8 0 840 20 10;
+#X msg 53 41 1 740 20 120;
+#X msg 144 40 0 740 20 10;
+#X msg 56 -6 1 840 25 20;
+#X connect 1 0 9 0;
+#X connect 1 0 10 0;
+#X connect 1 1 8 0;
+#X connect 1 1 7 0;
+#X connect 2 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 5 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 10 0 5 0;
+#X restore 736 5 pd conduite;
+#X obj -7 5 r~ eq9;
+#X obj -46 223 throw~ mix9;
+#X obj 708 23 vradio 15 1 0 15 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#N canvas 370 284 738 258 presets 0;
+#X obj 55 26 inlet;
+#X obj 130 26 inlet;
+#X obj 204 26 inlet;
+#X obj 297 26 inlet;
+#X obj 387 26 inlet;
+#X obj 472 28 inlet;
+#X obj 563 29 inlet;
+#X obj 648 30 inlet;
+#X msg 130 95;
+#X msg 204 97;
+#X msg 297 93;
+#X msg 387 93;
+#X msg 472 94;
+#X msg 563 94;
+#X msg 648 96;
+#X obj 130 230 outlet;
+#X msg 55 52 pk7freq 20 \, pk7active 0 \, pk7gain -30 \, pk7res 0.1
+\, pk6freq 20 \, pk6active 0 \, pk6gain -30 \, pk6res 0.1 \, pk5active
+0 \, pk5gain -30 \, pk5freq 20 \, pk4active 0 \, pk4gain -30 \, pk4res
+0.1 \, pk4freq 20 \, gain 0 \, lpres 0.707946 \, lpfreq 20 \, lpactive
+0 \, hsgain -30 \, hsres 0.1 \, hsfreq 20 \, hsactive 0 \, pk3gain
+-30 \, pk3res 0.1 \, pk3freq 20 \, pk3active 0 \, pk2gain -30 \, pk2res
+0.1 \, pk2freq 20 \, pk2active 0 \, pk1gain -30 \, pk1res 0.1 \, pk1freq
+20 \, pk1active 0 \, lsgain -30 \, lsres 0.1 \, lsfreq 20 \, lsactive
+0 \, hpres 0.707946 \, hpactive 0 \, hpfreq 20 \,;
+#X connect 0 0 16 0;
+#X connect 1 0 8 0;
+#X connect 2 0 9 0;
+#X connect 3 0 10 0;
+#X connect 4 0 11 0;
+#X connect 5 0 12 0;
+#X connect 6 0 13 0;
+#X connect 7 0 14 0;
+#X connect 8 0 15 0;
+#X connect 9 0 15 0;
+#X connect 10 0 15 0;
+#X connect 11 0 15 0;
+#X connect 12 0 15 0;
+#X connect 13 0 15 0;
+#X connect 14 0 15 0;
+#X connect 16 0 15 0;
+#X restore 678 268 pd presets;
+#X obj 678 248 sel 0 1 2 3 4 5 6 7;
+#X obj 679 291 sel 8 9 10 11 12 13 14 15;
+#N canvas 370 284 738 258 presets 0;
+#X obj 55 26 inlet;
+#X obj 130 26 inlet;
+#X obj 204 26 inlet;
+#X obj 297 26 inlet;
+#X obj 387 26 inlet;
+#X obj 472 28 inlet;
+#X obj 563 29 inlet;
+#X obj 648 30 inlet;
+#X msg 55 94;
+#X msg 130 95;
+#X msg 204 97;
+#X msg 297 93;
+#X msg 387 93;
+#X msg 472 94;
+#X msg 563 94;
+#X msg 648 96;
+#X obj 130 230 outlet;
+#X connect 0 0 8 0;
+#X connect 1 0 9 0;
+#X connect 2 0 10 0;
+#X connect 3 0 11 0;
+#X connect 4 0 12 0;
+#X connect 5 0 13 0;
+#X connect 6 0 14 0;
+#X connect 7 0 15 0;
+#X connect 8 0 16 0;
+#X connect 9 0 16 0;
+#X connect 10 0 16 0;
+#X connect 11 0 16 0;
+#X connect 12 0 16 0;
+#X connect 13 0 16 0;
+#X connect 14 0 16 0;
+#X connect 15 0 16 0;
+#X restore 678 321 pd presets;
+#X connect 0 0 4 0;
+#X connect 0 2 1 0;
+#X connect 2 0 0 2;
+#X connect 3 0 0 1;
+#X connect 5 0 7 0;
+#X connect 6 0 0 2;
+#X connect 7 0 6 0;
+#X connect 7 1 6 1;
+#X connect 7 2 6 2;
+#X connect 7 3 6 3;
+#X connect 7 4 6 4;
+#X connect 7 5 6 5;
+#X connect 7 6 6 6;
+#X connect 7 7 6 7;
+#X connect 7 8 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 9 1;
+#X connect 8 2 9 2;
+#X connect 8 3 9 3;
+#X connect 8 4 9 4;
+#X connect 8 5 9 5;
+#X connect 8 6 9 6;
+#X connect 8 7 9 7;
+#X connect 9 0 0 2;
+#X restore 92 261 pd equas9;
+#N canvas 450 257 687 305 servos-control 0;
+#X obj 45 41 hsl 128 15 544 2200 0 0 ctrl-S1 rctrl-S1 S1 -2 -8 0 10
+-105134 -262130 -1 7332 1;
+#X obj 68 103 hsl 128 15 544 2200 0 0 ctrl-S2 rctrl-S2 S2 -2 -8 0 10
+-50390 -262130 -1 3700 1;
+#X obj 98 172 hsl 128 15 544 2200 0 0 ctrl-S3 rctrl-S3 S3 -2 -8 0 10
+-105134 -262130 -1 4400 1;
+#X obj 121 237 hsl 128 15 544 2200 0 0 ctrl-S4 rctrl-S4 S4 -2 -8 0
+10 -50390 -262130 -1 7400 1;
+#X obj 241 41 hsl 128 15 544 2200 0 0 ctrl-S5 rctrl-S5 S5 -2 -8 0 10
+-105134 -262130 -1 3600 1;
+#X obj 264 103 hsl 128 15 544 2200 0 0 ctrl-S6 rctrl-S6 S6 -2 -8 0
+10 -50390 -262130 -1 4800 1;
+#X obj 294 172 hsl 128 15 544 2200 0 0 ctrl-S7 rctrl-S7 S7 -2 -8 0
+10 -105134 -262130 -1 2300 1;
+#X obj 317 237 hsl 128 15 544 2200 0 0 ctrl-S8 rctrl-S8 S8 -2 -8 0
+10 -50390 -262130 -1 6700 1;
+#X obj 448 40 hsl 128 15 544 2200 0 0 ctrl-S9 rctrl-S9 S9 -2 -8 0 10
+-105134 -262130 -1 4200 1;
+#X obj 10 56 s A1;
+#X obj 33 118 s A2;
+#X obj 63 187 s A3;
+#X obj 5 24 r rA1;
+#X obj 26 86 r rA2;
+#X obj 55 155 r rA3;
+#X obj 77 220 r rA4;
+#X obj 200 24 r rA5;
+#X obj 223 86 r rA6;
+#X obj 252 155 r rA7;
+#X obj 277 220 r rA8;
+#X obj 404 23 r rA9;
+#X obj 87 252 s B1;
+#X obj 207 56 s B2;
+#X obj 230 118 s B3;
+#X obj 259 187 s C1;
+#X obj 283 252 s C2;
+#X obj 414 55 s C3;
+#X msg 129 17 1500;
+#X floatatom 127 63 5 0 0 0 - - -;
+#X connect 0 0 9 0;
+#X connect 0 0 28 0;
+#X connect 1 0 10 0;
+#X connect 2 0 11 0;
+#X connect 3 0 21 0;
+#X connect 4 0 22 0;
+#X connect 5 0 23 0;
+#X connect 6 0 24 0;
+#X connect 7 0 25 0;
+#X connect 8 0 26 0;
+#X connect 12 0 0 0;
+#X connect 13 0 1 0;
+#X connect 14 0 2 0;
+#X connect 15 0 3 0;
+#X connect 16 0 4 0;
+#X connect 17 0 5 0;
+#X connect 18 0 6 0;
+#X connect 19 0 7 0;
+#X connect 20 0 8 0;
+#X connect 27 0 0 0;
+#X restore 244 44 pd servos-control;
+#X obj 228 195 filters;
